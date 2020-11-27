@@ -1,0 +1,8 @@
+.hide{
+	visibility: hidden;
+}
+
+.vise{
+	visibility: visible;
+	transition: transform 200s;
+}
