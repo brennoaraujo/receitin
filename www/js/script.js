@@ -2,11 +2,9 @@
  	var count = 0;
  	var livro = [];
  	var idd = 0;
+ 	addPaco(count);
  	$("#paco").click(function(){
- 		var val = "";
- 		val += "º: <input class='form-control' placeholder='Passo número "+(count+1)+"' id='inpt"+count+"'></input><br>";
- 		count++;
- 		$("#etapas").append(count+val);
+ 		addPaco(count);
  	});
  	$("#sub").click(function(){
  		var n = []
@@ -25,6 +23,13 @@
  		mostrarLivro("#livros",livro);
  	});
  });
+
+function addPaco(count){
+	var val = "";
+ 	val += "º: <input class='form-control' placeholder='Passo número "+(count+1)+"' id='inpt"+count+"'></input><br>";
+ 	count++;
+ 	$("#etapas").append(count+val);
+}
 
 function mostrarLivro(espaco, array){
 	var contador = 0;
