@@ -2,6 +2,10 @@
 	visibility: hidden;
 }
 
+.card-receipe{
+	margin-top: 5px;
+}
+
 .vise{
 	visibility: visible;
 	transition: transform 200s;
