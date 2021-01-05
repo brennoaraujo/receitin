@@ -1,0 +1,63 @@
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title></title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<center>
+		<h1>Receitin</h1>
+		<h5>Armazene e compartilhe suas obras na cozinha!</h5>
+	</center>
+	<ul class="nav nav-tabs">
+		<li class="nav-item">
+			<a class="nav-link active" data-toggle="tab" href="#addReceita">Adicionar</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" id="btnReceita" href="#receitas">Receitas</a>
+		</li>
+		<li class="nav-item dropdown">
+			<!-- Menu Dropdown -->
+			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mais</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" data-toggle="tab" href="#remoke">Remover</a>
+				<a class="dropdown-item" data-toggle="tab" href="#share">Compartilhar</a>
+				<div class="dropdown-divider"></div>
+			</div>
+		</li>
+	</ul>
+	<div id="myTabContent" class="tab-content">
+		<div class="tab-pane fade active show" id="addReceita">
+			<label for="exampleInputEmail1">Nome da Receita</label>
+			<input type="email" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="Nome da Receita">
+			<label for="exampleInputEmail1">Descrição</label>
+			<input type="email" class="form-control" id="desc" aria-describedby="emailHelp" placeholder="Breve descrição da receita">
+			<div class="dropdown-divider"></div>
+			<p class="lead">Passos</p>
+			<div id="etapas"></div><button type="button" class="btn btn-primary" id="paco">+</button>
+			<button type="button" class="btn btn-danger" onclick="rmPaco()">-</button>
+			<button type="button" class="btn btn-secondary" id="sub">Gravar</button>
+		</div>
+		<div class="tab-pane fade" id="receitas">
+		</div>
+		<div class="tab-pane fade" id="remoke">
+			<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+		</div>
+		<div class="tab-pane fade" id="share">
+			<p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
+		</div>
+	</div>
+	<!-- Pagina de Adicionar receita -->
+	<div class="tab-content" id="nav-tabContent">
+		<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+			
+		</div>
+		<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+	</div>
+</body>
+</html>
