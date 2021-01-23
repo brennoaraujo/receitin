@@ -6,6 +6,10 @@
 	margin-top: 5px;
 }
 
+body{
+	font-size: 115%;
+}
+
 .vise{
 	visibility: visible;
 	transition: transform 200s;

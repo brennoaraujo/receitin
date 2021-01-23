@@ -29,16 +29,6 @@ function addPaco(contador){ //Adiciona um paço
 	$("#etapas").append(val);
 }
 
-/*
-**BETA ONLY
-**Remove um paço
-
-function rmPaco(){ 
-	console.log(count);
-	$("#dir"+(1-count)).empty();
-	count--;
-}*/
-
 function addReceita(contador, idd, livro){
 	var n = [];
 	livro = JSON.parse(db.getItem(key));
@@ -51,13 +41,22 @@ function addReceita(contador, idd, livro){
 	}
 	var pgDesci = $("#desc").val();
 	var pgNome = $("#nome").val();
+	var ingredientes = $("#ingrd").val();
 	var receita = {
 		//id: idd, //Inteiro
 		nome: pgNome, //String
 		descri: pgDesci, //String
-		etapa: n //Array (de Strings)
+		etapa: n, //Array (de Strings)
+		ingr: ingredientes //String
 	};
 	livro.push(receita);
+	db.setItem(key, JSON.stringify(livro));
+	location.reload();
+}
+
+function rmReceita(index) {
+	var livro = JSON.parse(db.getItem(key));
+	livro.splice(index,1);
 	db.setItem(key, JSON.stringify(livro));
 	location.reload();
 }
@@ -68,11 +67,14 @@ function mostrarReceita(index){
 		if (index == array.indexOf(v)) {
 			$(".titlesPopUp").empty(); //Irá limpar conteudo que já tiver
 			$("#exampleModalLabel").html(v.nome);
-			$("#popUpReceitas").append("<i>"+v.descri+"</i><p>");
+			$("#popUpReceitas").append("<i>"+v.descri+"</i><br>Ingredientes:<br>"+v.ingr+"<p>");
 			for(let i of v.etapa){
-				$("#popUpReceitas").append(i+"<br> ");
+				$("#popUpReceitas").append((v.etapa.indexOf(i)+1)+"º: "+i+"<br> ");
 			}
 			$("#popUpReceitas").append("</p>");
+			$("#btn-rmv").click(function () {
+				rmReceita(index);
+			});
 		}
 	}
 }
@@ -84,7 +86,7 @@ function mostrarLivro(espaco){ //Mostra o livro de receitas
 		console.log(array.indexOf(i));
 		val = "";
 		val += "<div class='card card-receipe'>";
-		val += "<div id='card"+i.id+"' class='card-body'>";
+		val += "<div id='card' class='card-body'>";
 		val += "<h4 class='card-title'>"+i.nome+"</h4>";
 		val += "<p class='card-text'>"+i.descri+"</p>";
 		val += "<button type='button' onclick='mostrarReceita("+array.indexOf(i)+")' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal'>";
