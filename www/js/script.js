@@ -56,7 +56,7 @@ function addReceita(contador, idd, livro){
 
 function rmReceita(index) {
 	var livro = JSON.parse(db.getItem(key));
-	livro.splice(index,1);
+	livro.splice(index, 1);
 	db.setItem(key, JSON.stringify(livro));
 	location.reload();
 }
