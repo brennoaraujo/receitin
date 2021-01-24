@@ -1,15 +1,24 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.brennoaraujo.receitin" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.brennoaraujo.receitin" version="1.2A" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <name>HelloCordova</name>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <icon src="res/icon.png" />
+    <name>Receitin</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Programa para armazenamento de receitas, baseado em HTML5 e Cordova
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="brennoaraujo25@gmail.com" href="https://github.com/brennoaraujo">
+        Brenno Araujo
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -20,5 +29,11 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
+    <splash density="port-hdpi" src="res/screen/splash-port-hdpi.png" />
+    <splash density="port-ldpi" src="res/screen/splash-port-ldpi.png" />
+    <splash density="port-mdpi" src="res/screen/splash-port-mdpi.png" />
     <preference name="loglevel" value="DEBUG" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#e6e6e6" />
+    <preference name="StatusBarStyle" value="blackopaque" />
 </widget>
