@@ -20,4 +20,4 @@ Adicionar uma função de compartilhamento, em que será gerado um código copia
 * Android webview
 
 ## Bugs e problemas
-Em caso de problemas de utilização e bugs, favor reportar na aba "Inssues" do GitHub :)
+Em caso de problemas de utilização e bugs, favor reportar na aba "Issues" do GitHub :)
